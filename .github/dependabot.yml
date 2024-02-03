@@ -8,11 +8,8 @@ updates:
       - "dependencies"
 
   - package-ecosystem: "npm"
-    directory: "../"
+    directory: "/"
     schedule:
       interval: "daily"
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
     labels:
       - "dependencies"
