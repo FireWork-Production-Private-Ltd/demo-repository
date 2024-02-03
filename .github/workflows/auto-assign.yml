@@ -6,6 +6,7 @@ on:
     types: [opened]
 jobs:
   run:
+    if: ${{ github.actor != 'up1512001' }}
     runs-on: ubuntu-latest
     permissions:
       issues: write
