@@ -7,7 +7,7 @@ on:
 
 jobs:
   run:
-    if: ${{ github.event_name == 'issues' || (github.event_name == 'pull_request' && github.actor != github.event.issue.user.login) || github.actor != 'up1512001' }}
+    if: ${{ ( github.event_name == 'issues' || (github.event_name == 'pull_request' && github.actor != github.event.issue.user.login) ) && github.actor != 'up1512001' }}
     runs-on: ubuntu-latest
     permissions:
       issues: write
