@@ -4,17 +4,18 @@ on:
     types: [opened]
   pull_request:
     types: [opened]
+
 jobs:
   run:
-    if: ${{ github.actor != 'up1512001' }}
+    if: ${{ ( github.event_name == 'issues' || (github.event_name == 'pull_request' && github.actor != github.event.issue.user.login) ) && github.actor != 'up1512001' }}
     runs-on: ubuntu-latest
     permissions:
       issues: write
       pull-requests: write
     steps:
-    - name: 'Auto-assign issue'
-      uses: pozil/auto-assign-issue@v1
-      with:
+      - name: 'Auto-assign issue'
+        uses: pozil/auto-assign-issue@v1
+        with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          assignees: up1512001,renishsurani,uk2315
+          assignees: up1512001, renishsurani, uk2315
           numOfAssignee: 3
