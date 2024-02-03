@@ -3,14 +3,14 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      - cron: "*/5 * * * *"
+      interval: "daily"
     labels:
       - "dependencies"
 
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      - cron: "*/5 * * * *"
+      interval: "daily"
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
