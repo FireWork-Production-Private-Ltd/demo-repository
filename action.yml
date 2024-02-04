@@ -1,0 +1,26 @@
+name: Auto Assign PR and Issues
+description: This will auto assign to each member any PR or issue when created.
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+
+jobs:
+  run:
+    if: ${{ ( github.event_name == 'issues' || (github.event_name == 'pull_request' && github.actor != github.event.issue.user.login) ) && github.actor != 'up1512001' }}
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - name: 'Auto-assign issue'
+        uses: pozil/auto-assign-issue@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          assignees: up1512001, renishsurani, uk2315
+          numOfAssignee: 3
+
+  branding:
+  icon: 'activity'
+  color: 'green'
