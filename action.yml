@@ -21,6 +21,6 @@ jobs:
           assignees: up1512001, renishsurani, uk2315
           numOfAssignee: 3
 
-  branding:
+branding:
   icon: 'activity'
   color: 'green'
