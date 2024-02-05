@@ -4,7 +4,7 @@
   "description": "demo package learning how to publish",
   "main": "index.js",
   "dependencies": {
-    "@black1512/npm_github_package": "^4.0.0"
+    "@black1512/npm_github_package": "^5.0.4"
   },
   "scripts":{
     "test": "node test/test.js",
